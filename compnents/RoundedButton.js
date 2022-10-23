@@ -11,7 +11,7 @@ const RoundedButton = ({text, onPress, size, ...props}) => {
       onPress={() => onPress(!props.isStarted)}
     >
       <Image source={props.isStarted && props.mode
-        ? require('../assets/images/start_Button2.png')
+        ? require('../assets/images/pause_Button2.png')
         : props.isStarted && !props.mode
         ? require('../assets/images/pause_Button.png')
         : !props.isStarted && props.mode

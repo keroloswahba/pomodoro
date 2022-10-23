@@ -12,11 +12,18 @@ const second = (millis) => (millis / 1000 % 60)
 const Countdown = ({
   minutes, 
   isStarted, 
+  progress,
   setProgress, 
   setShowTomato, 
   showTomato, 
   newSession, 
-  mode
+  mode,
+  rounds,
+  setrounds,
+  setCoffeeBreak,
+  coffeeBreak,
+  setIsStarted
+
 }) => {
   const [millis, setMillis] = useState(minutesToMillis(minutes))
   const [prog, setProg] = useState(0)
@@ -37,8 +44,12 @@ const Countdown = ({
       interval.current = setInterval(countdown, 1000)
     } else if(millis > 0 && !isStarted) {
       return;
-    } else {
+    } else if(millis == 0) {
       setProgress(1);
+      if(!coffeeBreak) {
+        setrounds(rounds + 1)
+      }
+      setCoffeeBreak(!coffeeBreak)
     }
     return () => clearInterval(interval.current)
   }, [millis, isStarted])

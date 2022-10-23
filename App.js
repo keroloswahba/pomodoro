@@ -3,11 +3,10 @@ import { StyleSheet, Image, View, ImageBackground, TouchableOpacity } from 'reac
 import Tomato01 from './screens/Tomato01';
 
 export default function App() {
-  const [mode, setMode] = useState(false)
-
+  
   return (
     <View style={styles.container}>
-      <Tomato01 mode={mode}/>
+      <Tomato01 />
     </View>
   );
 }

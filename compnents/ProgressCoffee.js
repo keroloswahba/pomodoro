@@ -10,16 +10,13 @@ import * as Progress from 'react-native-progress';
 const progressSize = Dimensions.get("window").width * 0.75;
 const WIDTH = Dimensions.get("window").width;
 
-export default function ProgressTomato({
+export default function ProgressCoffee({
   progress, 
   setShowTomato, 
   showTomato, 
   mode,
   coffeeBreak
 }) {
-
-  
-
   return (
     <View style={styles.container}>
       <ImageBackground 
@@ -45,19 +42,17 @@ export default function ProgressTomato({
               }}>
                 <Image 
                   style={{
-                    height: WIDTH * 0.49, 
+                    height: WIDTH * 0.41, 
                     width: WIDTH * 0.50
                   }}
                   source={
-                      progress < 0.12 ? require('../assets/images/tomato08.png')
-                    : progress < 0.24 ? require('../assets/images/tomato07.png')
-                    : progress < 0.36 ? require('../assets/images/tomato06.png')
-                    : progress < 0.48 ? require('../assets/images/tomato05.png')
-                    : progress < 0.60 ? require('../assets/images/tomato04.png')
-                    : progress < 0.72 ? require('../assets/images/tomato03.png')
-                    : progress < 0.84 ? require('../assets/images/tomato02.png')
-                    : progress < 0.96 ? require('../assets/images/tomato01.png')
-                    : require('../assets/images/tomato00.png')
+                    progress < 0.19 ? require('../assets/images/mugs/one.png')
+                    : progress < 0.38 ? require('../assets/images/mugs/two.png')
+                    : progress < 0.57 ? require('../assets/images/mugs/three.png')
+                    : progress < 0.86 ? require('../assets/images/mugs/four.png')
+                    : progress < 0.95 ? require('../assets/images/mugs/five.png')
+                    : require('../assets/images/mugs/six.png')
+                    
                   } 
                 />
               </TouchableOpacity>
